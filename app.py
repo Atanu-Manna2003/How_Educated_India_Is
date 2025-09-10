@@ -18,7 +18,7 @@ st.set_page_config(
 # Load data
 @st.cache_data
 def load_data():
-    url="https://raw.githubusercontent.com/Rupsa9647/How_Educated_India/main/Datasets/final_clean_dataset.csv"
+    url="https://raw.githubusercontent.com/Atanu-Manna2003/How_Educated_India_Is/main/Datasets/final_clean_dataset.csv"
     df = pd.read_csv(url)
     return df
 
@@ -304,7 +304,7 @@ elif options == "Rural vs Urban":
 
 elif options == "Clustering Analysis":
     st.header("State Clustering Based on Literacy Rates")
-    url="https://raw.githubusercontent.com/Rupsa9647/How_Educated_India/main/Datasets/All_Ages_And_Total_Area_Data.csv"
+    url="https://raw.githubusercontent.com/Atanu-Manna2003/How_Educated_India_Is/main/Datasets/All_Ages_And_Total_Area_Data.csv"
     df=pd.read_csv(url)
     # Compute Literacy Rate
     df["Literacy Rate"] = (df["Literate Person"] / df["Total Person"]) * 100
@@ -369,7 +369,7 @@ elif options == "Forecasting":
     st.header("Literacy Rate Forecasting")
     
     # Filter for national totals
-    url="https://raw.githubusercontent.com/Rupsa9647/How_Educated_India/main/Datasets/All_Ages_And_Total_Area_Data.csv"
+    url="https://raw.githubusercontent.com/Atanu-Manna2003/How_Educated_India_Is/main/Datasets/All_Ages_And_Total_Area_Data.csv"
     df_f =pd.read_csv(url)
     if "Area" in df_f.columns:
         df_f = df_f[df_f["Area"].astype(str).str.lower().str.strip() == "total"]
